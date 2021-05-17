@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pasillo - contato</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Biblioteca -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="API's/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="API's/jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="API's/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script> -->
+    <script src="js/js.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/gif" href="animated_favicon1.gif">
+    <!-- css footer -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+  /* css campo gestante */
+  #cnpj {
+     display: none;
+  }
+</style>
+
+<body>
+    <!-- <div class="container-fluid"> -->
+    <!-- Cabeçalho -->
+    <header id="topo">
+        <!-- Menu -->
+        <nav class="navbar navbar-expand-md fixed-top navbar-light text-right" role="navigation">
+            <!-- Imagem logo no menu -->
+            <a class="nav-brand " href="index.html"><img src="imagens/LOGO CINZA.png" width="80px"
+                    alt="logo empresa pasillo"></a>
+            <!-- Botão aparece quando diminui a tela -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBar"
+                aria-controls="navBar" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center " id="navBar" >
+                <a class="nav-item nav-link text-white text-uppercase" href="index.html">Home</a>
+                <a class="nav-item nav-link text-white text-uppercase" href="servicos.html">Serviços</a>
+                <a class="nav-item nav-link text-white text-uppercase" href="projetos.html">Projetos</a>
+                <a class="nav-item nav-link text-white text-uppercase" href="sobre-nos.html">Sobre Nós</a>
+                <a class="nav-item nav-link text-white text-uppercase" href="contato.html">Contato</a>
+            </div>
+        </nav>
+        </div>
+    </header>
+
+    <main class="bg-light py-2">
+        <div class="mt-5 d-flex col-12 ">
+            <div class="col-12 mt-5">
+                <h5 class="text-muted text-left ml-4"> Entre em contato com a gente:</h5>
+            </div>
+        </div>
+
+        <form class="col-md-5 m-auto">
+            <div class="form">
+            <!-- Nome  -->
+              <div class="col-12 my-1 text-center">
+                <label class="sr-only" for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" placeholder="Nome completo" required>
+              </div>
+
+             <!-- CPF ou CNPJ  -->
+             <div class="form-check-inline ml-3 " id="cpf-cnpj" >
+                <input class="form-check-input" type="radio" value="1" id="cpf-radio" checked name="cpf" onclick="CpfCnpj(this.value)">
+                <label class="form-check-label" for="cpf-radio">CPF</label>
+              </div>
+              <div class="form-check-inline">
+                <input class="form-check-input" type="radio" value="2" id="cnpj-radio" name="cnpj" onclick="CpfCnpj(this.value)">
+                <label class="form-check-label" for="cnpj-radio">CNPJ</label>
+              </div>
+            <!-- CPF   -->
+            <div id="cpf-some" class="col-sm-12 my-1">
+                <label class="sr-only" for="cpf">CPF:</label>
+                <input class="form-control" type="text" name="cpf" id="cpf" maxlength="14" placeholder="CPF" onblur="VerificaCPF()" >
+              </div>
+            <!-- CNPJ   -->
+            <div id="cnpj-some" class="col-sm-12 my-1">
+                <label class="sr-only" for="cnpj">CNPJ:</label>
+                <input class="form-control" type="text" name="cnpj" id="cnpj" maxlength="18" placeholder="CNPJ" onblur="validarCNPJ()" >
+              </div>
+
+              <!-- e-mail -->
+              <div class="col-sm-12 my-1">
+                <label class="sr-only" for="email">E-mail</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">@</div>
+                  </div>
+                  <input type="email" class="form-control" id="email" placeholder="email@example.com"onblur="validacaoEmail(email)"required >
+                </div>
+              </div>
+              <!-- telefone -->
+              <div class="col-sm-12 my-1">
+                <label class="sr-only" for="tel">Telefone</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                      </svg></div>
+                  </div>
+                  <input type="tel" class="form-control" id="tel" placeholder="(DDD) 99999-9999" >
+                </div>
+              </div>
+              <!-- tipo de intervenção -->
+              <div class="col-sm-12 my-1">
+                <label class="mr-sm-7 sr-only" for="intervencao">Tipo de intervenção</label>
+                <select class="custom-select mr-sm-7" id="intervencao">
+                  <option selected>Tipo de intervenção...</option>
+                  <option value="1">Residencial</option>
+                  <option value="2">Comercial</option>
+                  <option value="3">Institucional</option>
+                  <option value="4">Serviços gerais</option>
+                </select>
+              </div>
+              <!-- Mensagem -->
+              <div class="form-group col-sm-12 my-1">
+                <label class="sr-only"  for="Textarea">textarea</label>
+                <textarea class="form-control" id="Textarea" rows="5"  placeholder="Deixe sua mensagem" required></textarea>
+              </div>
+
+              <!-- Botão enviar -->
+              <div class="col-sm-12 my-1 text-right ">
+                <button type="submit" class="btn btn-outline-secondary">Enviar</button>
+              </div>
+            </div>
+          </form>
+    </main>
+    <footer>
+        <p> &copy; Copyright 2021 | pasillo arquitetura e urbanismo</p>
+    </footer>
+    <!-- </div> -->
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

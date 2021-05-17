@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    background-color: #34346E;
+}
+
+footer {
+    background-color: #34346E;
+    color: white;
+    text-align: center;
+    padding: 10px; 
+    clear: both;                 
+}
+
+footer p {
+    margin-top:20px;
+    }
