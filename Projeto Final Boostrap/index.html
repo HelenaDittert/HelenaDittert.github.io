@@ -29,15 +29,27 @@
     main {
         background-image: url(imagens/LOGO\ CINZA-n2.png);
         background-repeat: no-repeat;
-        background-size: 70%;
-        /* height: 1000px; */
+        background-size: 60%;
         background-position: right top;
     }
+    #logo-sumir{
+        display: none;
+    }
+    @media screen and (max-width: 576px) {
+        #logo-sumir{
+            display: inline;    
+        }
+        main{
+            background-image: none;
+        }
+        .sumir{
+            display: none;
+        }
+}
 
     #meio {
         position: absolute;
         top: 100%;
-        /* background-color: red; */
     }
     
     .scrollTop {
@@ -58,6 +70,7 @@
     main{
     height:1300px;
     }
+   
    
 </style>
 
